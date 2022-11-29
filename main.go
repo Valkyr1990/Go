@@ -3,10 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	//a:=44
+	const (
+		Sunday = iota
+		Monday
+		Tuesday
+		Wednesday
+		Thursday
+		Friday
+		Saturday
+	)
 
-	var a2 int = 10
+	fmt.Println(Sunday)   // вывод 0
+	fmt.Println(Saturday) // вывод 6
 
-	a2 = a2 * 10
-	fmt.Println(a2)
 }
