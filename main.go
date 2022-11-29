@@ -3,8 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	fmt.scan(&a)
-	If a <0 or a>360
+	var a int
+	fmt.Scan(&a)
+	if a > 360 {
+		a = 360
+	}
+	if a < 0 {
+		a = 0
+	}
+	var c int
+	c = a / 30
+	var b int
+	b = 2 * (a % 30)
+	fmt.Println("It is", c, "hours", b, "minutes.")
 
-	fmt.Println(a)
 }
