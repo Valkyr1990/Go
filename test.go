@@ -3,7 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	var a int
-	fmt.Scan(&a)
-	fmt.Println(a)
+
+	a := 1
+	b := 2
+	if a < b {
+		fmt.Println("a меньше b")
+	} else if a > b {
+		fmt.Println("a больше b")
+	}
 }
