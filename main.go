@@ -1,19 +1,33 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+)
 
 func main() {
-	// put your code here
-	var a, b float64
-	fmt.Scan(&a)
-	b = a * a
-	if a <= 0 {
-		fmt.Printf("число %2.2f не подходит", a)
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("Введите размерность:")
+	value, _ := reader.ReadString('\n')
+	n, err := strconv.Atoi(value[:len(value)-1])
+	if err != nil {
+		panic(err)
 	}
-	if b > 10000 {
-		fmt.Printf("%e", a)
+	mas := make([][]float64, n)
+	for i := 0; i < n; i++ {
+		fmt.Println("Массив ", i+1, ":")
+		for j := 0; j < n; j++ {
+			fmt.Println("Введите ", j+1, " число:")
+			value, _ = reader.ReadString('\n')
+			fnum, err := strconv.ParseFloat(value[:len(value)-1], 64)
+			if err != nil {
+				panic(err)
+			}
+			mas[i] = append(mas[i], fnum)
+		}
 	}
-	if (b > 0 && b < 10000) && a > 0 {
-		fmt.Printf("%.4f", b)
-	}
+
+	fmt.Println(mas)
 }
