@@ -1,11 +1,20 @@
 package main
 
-import "fmt"
+// Importing required packages
+import (
+	"fmt"
+)
+
+// Variadic function to return
+// the sum of the numbers
+func add(num ...int) int {
+	sum := 0
+	for j := range num {
+		sum += j
+	}
+	return sum
+}
 
 func main() {
-	a := [5]int{1, 2, 3, 4, 5}
-
-	for _, elem := range a {
-		fmt.Println(elem)
-	}
+	fmt.Println("Sum =")
 }
