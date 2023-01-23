@@ -10,15 +10,6 @@ func main() {
 func ExampleScope1() {
 	var v int = 1
 
-	{
-		/*
-		 * Здесь переменная из внешнего лексического блока затеняется
-		 * переменной внутреннего лексического блока
-		 */
-		var v string = "2"
-		fmt.Println(v)
-	}
-
 	fmt.Println(v)
 
 	/*
